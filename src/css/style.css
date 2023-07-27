@@ -1,16 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-:root {
+/* :root {
   --clr-1: #e0e2db;
   --clr-2: #191716;
   --clr-3: #e6af2e;
-}
-
-:root {
-  --clr-1: #e0e2db;
-  --clr-2: #191716;
-  --clr-3: #e6af2e;
-}
+} */
 
 *,
 *::before,
@@ -32,6 +26,49 @@ body {
   place-items: center;
   font-family: "Roboto", sans-serif;
   background-color: var(--clr-1);
+}
+
+body.light {
+  --clr-1: #e0e2db;
+  --clr-2: #191716;
+  --clr-3: #e6af2e;
+}
+
+body.dark {
+  --clr-1: #191716;
+  --clr-2: #e0e2db;
+  --clr-3: #e6af2e;
+}
+
+.theme-toggle {
+  width: 4rem;
+  height: 2rem;
+  margin-left: auto;
+  border-radius: 5rem;
+  background-color: var(--clr-2);
+  position: relative;
+  cursor: pointer;
+}
+
+.theme-toggle::after {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  border-radius: 5rem;
+  background-color: var(--clr-1);
+  transition: all 0.3s linear;
+}
+
+body.dark .theme-toggle::after {
+  left: 75%;
+}
+
+input[type="checkbox"] {
+  display: none;
 }
 
 .calculator {
@@ -81,6 +118,7 @@ body {
   color: var(--clr-1);
   background-color: var(--clr-2);
   box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
