@@ -90,13 +90,13 @@ input[type="checkbox"] {
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
 }
 
-.display .operation {
+.expression {
   min-height: 1.25em;
   display: flex;
   gap: 0.25rem;
 }
 
-.operation span {
+.expression span {
   color: var(--clr-3);
 }
 
