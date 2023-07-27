@@ -67,10 +67,6 @@ body.dark .theme-toggle::after {
   left: 75%;
 }
 
-input[type="checkbox"] {
-  display: none;
-}
-
 .calculator {
   width: 25rem;
   display: grid;
@@ -101,6 +97,7 @@ input[type="checkbox"] {
 }
 
 .result {
+  text-align: end;
   font-size: 4rem;
   font-weight: bold;
 }
@@ -140,6 +137,10 @@ input[type="checkbox"] {
 .button#equal {
   aspect-ratio: auto;
   grid-column: span 2;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (width < 600px) {
