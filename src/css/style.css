@@ -6,6 +6,12 @@
   --clr-3: #e6af2e;
 }
 
+:root {
+  --clr-1: #e0e2db;
+  --clr-2: #191716;
+  --clr-3: #e6af2e;
+}
+
 *,
 *::before,
 *::after {
@@ -14,10 +20,14 @@
   padding: 0;
   scroll-behavior: smooth;
   /* border: 1px dashed red; */
+  scroll-behavior: smooth;
+  /* border: 1px dashed red; */
 }
 
 body {
   min-height: 100vh;
+  display: grid;
+  place-items: center;
   display: grid;
   place-items: center;
   font-family: "Roboto", sans-serif;
@@ -36,7 +46,6 @@ body {
   justify-content: flex-end;
   font-size: 2rem;
   color: var(--clr-2);
-  /* overflow-x: scroll; */
 }
 
 .display > * {
