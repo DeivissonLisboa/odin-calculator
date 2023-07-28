@@ -24,12 +24,21 @@ function operate(operator, firstTerm, secondTerm) {
   return operator(firstTerm, secondTerm)
 }
 
-THEME_TOGGLE.addEventListener("change", ({ target }) => {
-  if (target.checked) {
+function setTheme(theme) {
+  if (theme === "dark") {
     document.body.classList.add("dark")
     document.body.classList.remove("light")
-  } else {
-    document.body.classList.remove("dark")
+  } else if (theme === "light") {
     document.body.classList.add("light")
+    document.body.classList.remove("dark")
   }
+}
+
+THEME_TOGGLE.addEventListener("change", ({ target }) => {
+  let theme = target.checked ? "dark" : "light"
+
+  setTheme(theme)
+  localStorage.setItem("theme", theme)
 })
+
+setTheme(localStorage.getItem("theme"))
