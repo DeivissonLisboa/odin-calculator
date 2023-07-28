@@ -98,10 +98,11 @@ body.dark .theme-toggle::after {
 .expression {
   min-height: 1.25em;
   display: flex;
+  justify-content: flex-end;
   gap: 0.25rem;
 }
 
-.expression span {
+.expression .symbol {
   color: var(--clr-3);
 }
 
@@ -137,13 +138,16 @@ body.dark .theme-toggle::after {
   transform: scale(0.98);
 }
 
-.button.operation,
-.button.clean {
+.button.accent {
   color: var(--clr-2);
   background-color: var(--clr-3);
 }
 
-.button#equal {
+body.dark .button.accent {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.button#equals {
   aspect-ratio: auto;
   grid-column: span 2;
 }
