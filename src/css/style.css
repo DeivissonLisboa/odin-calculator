@@ -40,10 +40,19 @@ body.dark {
   --clr-3: #e6af2e;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  fill: var(--clr-2);
+}
+
 .theme-toggle {
   width: 4rem;
   height: 2rem;
-  margin-left: auto;
   border-radius: 5rem;
   background-color: var(--clr-2);
   position: relative;
