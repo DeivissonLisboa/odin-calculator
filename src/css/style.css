@@ -147,7 +147,7 @@ body.dark .button.accent {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.button#equals {
+.button.equals {
   aspect-ratio: auto;
   grid-column: span 2;
 }
