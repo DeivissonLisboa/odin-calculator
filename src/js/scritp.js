@@ -52,6 +52,7 @@ function updateDisplay() {
   DISPLAY_OPERATION_SYMBOL.textContent = operationSymbol
 
   DISPLAY.scroll(DISPLAY.scrollWidth, 0)
+  DISPLAY_FIRST_TERM.parentNode.scroll(DISPLAY.scrollWidth, 0)
 }
 
 function cleanDisplay() {
