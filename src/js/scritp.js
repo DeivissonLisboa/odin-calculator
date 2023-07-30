@@ -46,6 +46,10 @@ function setTheme(theme) {
 }
 
 function updateDisplay() {
+  if (+displayValue % 1 !== 0) {
+    displayValue = displayValue.toFixed(3)
+  }
+
   DISPLAY.textContent = displayValue
   DISPLAY_FIRST_TERM.textContent = firstTerm
   DISPLAY_SECOND_TERM.textContent = secondTerm
