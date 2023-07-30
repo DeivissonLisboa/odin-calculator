@@ -5,6 +5,7 @@ const DISPLAY_OPERATION_SYMBOL = document.getElementById("operation_symbol")
 const DISPLAY_SECOND_TERM = document.getElementById("second_term")
 const DISPLAY_EQUALS = document.querySelector(".symbol.equals")
 const NUMBERS = document.querySelectorAll(".number")
+const DOT = document.querySelector(".dot")
 const OPERATIONS = document.querySelectorAll(".operation")
 const CLEAN = document.querySelector(".clean")
 const EQUALS = document.querySelector(".button.equals")
@@ -15,6 +16,7 @@ let operation
 let operationSymbol
 let displayValue = "0"
 let needNewCalc = false
+let isDecimal = false
 
 function add(a, b) {
   return a + b
@@ -47,8 +49,9 @@ function setTheme(theme) {
 }
 
 function updateDisplay() {
-  if (+displayValue % 1 !== 0) {
+  if (!isDecimal && +displayValue % 1 !== 0) {
     displayValue = displayValue.toFixed(3)
+    DOT.disabled = true
   }
 
   DISPLAY.textContent = displayValue
@@ -73,6 +76,7 @@ function cleanDisplay() {
   operationSymbol = ""
   displayValue = "0"
   needNewCalc = false
+  isDecimal = false
 
   updateDisplay()
 }
@@ -88,6 +92,7 @@ NUMBERS.forEach((number) => {
   number.addEventListener("click", ({ target }) => {
     if (needNewCalc) {
       cleanDisplay()
+      DOT.disabled = false
     }
 
     const targetNumber = target.textContent
@@ -100,6 +105,14 @@ NUMBERS.forEach((number) => {
 
     updateDisplay()
   })
+})
+
+DOT.addEventListener("click", () => {
+  if (!isDecimal) {
+    displayValue += "."
+    isDecimal = true
+    updateDisplay()
+  }
 })
 
 OPERATIONS.forEach((operation_btn) => {
@@ -136,6 +149,7 @@ OPERATIONS.forEach((operation_btn) => {
     operationSymbol = target.textContent
 
     displayValue = "0"
+    isDecimal = false
 
     updateDisplay()
   })
