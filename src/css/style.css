@@ -146,6 +146,10 @@ body.dark .theme-toggle::after {
   background-color: var(--clr-3);
 }
 
+button:disabled {
+  opacity: 0.5;
+}
+
 body.dark .button.accent {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
