@@ -3,6 +3,7 @@ const DISPLAY = document.querySelector(".result")
 const DISPLAY_FIRST_TERM = document.getElementById("first_term")
 const DISPLAY_OPERATION_SYMBOL = document.getElementById("operation_symbol")
 const DISPLAY_SECOND_TERM = document.getElementById("second_term")
+const DISPLAY_EQUALS = document.querySelector(".symbol.equals")
 const NUMBERS = document.querySelectorAll(".number")
 const OPERATIONS = document.querySelectorAll(".operation")
 const CLEAN = document.querySelector(".clean")
@@ -57,6 +58,12 @@ function updateDisplay() {
 
   DISPLAY.scroll(DISPLAY.scrollWidth, 0)
   DISPLAY_FIRST_TERM.parentNode.scroll(DISPLAY.scrollWidth, 0)
+
+  if (needNewCalc) {
+    DISPLAY_EQUALS.classList.remove("hidden")
+  } else {
+    DISPLAY_EQUALS.classList.add("hidden")
+  }
 }
 
 function cleanDisplay() {
@@ -141,8 +148,8 @@ CLEAN.addEventListener("click", () => {
 EQUALS.addEventListener("click", () => {
   if (!operation) return
 
-  equals()
   needNewCalc = true
+  equals()
 })
 
 THEME_TOGGLE.addEventListener("change", ({ target }) => {
